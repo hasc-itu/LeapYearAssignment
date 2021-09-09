@@ -1,12 +1,13 @@
-﻿using System;
+using System;
 
-namespace LeapYearA
+namespace LeapYear
 {
-    class Program
+  class Program {
+
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      
     }
+
+  }
 }
