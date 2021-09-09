@@ -68,5 +68,20 @@ namespace LeapYear.Tests
       // Assert
       Assert.True(isLeapYear, "Expected value to be a leap year since it is divisible by 400");
     }
+
+    [Theory]
+    [InlineData(-5254)]
+    [InlineData(-27)]
+    [InlineData(254)]
+    [InlineData(1200)]
+    [InlineData(1581)]
+    public void ThrowsErrorIfBelow1582(int year)
+    {
+      // Arrange
+      LeapYearHelper helper = new LeapYearHelper();
+
+      // Act & Assert
+      Assert.Throws<InvalidLeapYearException>(() => helper.IsLeapYear(year));
+    }
   }
 }
