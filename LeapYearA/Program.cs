@@ -2,19 +2,17 @@ using System;
 
 namespace LeapYear
 {
-  class Program {
+  
+  class Program
+  {
 
     public static void Main(string[] args)
     {
-      Console.WriteLine("Enter a year to check if it is a leap year:");
-      
-      string yearStr = Console.ReadLine();
-      int year = Convert.ToInt32(yearStr);
+      // Instantiate program
+      LeapYearProgram prog = new LeapYearProgram();
 
-      LeapYearHelper helper = new LeapYearHelper();
-      
-      Console.WriteLine(helper.IsLeapYear(year) ? "yay" : "nay");
-      
+      // Run program
+      prog.run();
     }
 
   }
