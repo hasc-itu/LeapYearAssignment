@@ -19,24 +19,23 @@ namespace LeapYear {
       // Start
       Console.WriteLine("Enter a year to check if it is a leap year:");
 
-      // Get input
-      int year = this.GetInput();
+      // Get description from input
+      string description = this.GetDescriptionFromInput();
 
-      // Get description
-      string description = this.GetDescriptionFromYear(year);
       Console.WriteLine(description);
     }
 
-    public int GetInput() {
-      // Get correct year
+    public string GetDescriptionFromInput() {
       int year = this.inputHandler.GetInputAsInt();
+
       try {
-        this.leapYearHelper.ThrowIfInvalidYear(year);
-        return year;
+        
+        return this.GetDescriptionFromYear(year);
+
       } catch(InvalidLeapYearException exception) {
         Console.WriteLine("Invalid year: " + exception.Message);
         Console.WriteLine("Please try again:");
-        return this.GetInput();
+        return this.GetDescriptionFromInput();
       }
     }
 
